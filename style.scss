@@ -523,7 +523,6 @@ main {
         }
       }
     }
-
     section.view5 {
       flex-direction: row;
       align-items: center;
@@ -633,7 +632,7 @@ main {
       @include flex-column(1rem);
       grid-area: section;
       border-radius: 10px;
-      background-color:#1e1e1e;
+      background-color: #1e1e1e;
       text-transform: uppercase;
 
       .list-content {
@@ -662,19 +661,18 @@ main {
           text-transform: uppercase;
         }
       }
-    }
-    .footer {
-      grid-area: footer;
-      border-radius: 10px;
-      background-color: #1e1e1e;
-      padding: 3rem;
-      text-transform: uppercase;
+      .footer {
+        grid-area: footer;
+        border-radius: 10px;
+        background-color: #1e1e1e;
+        padding: 3rem;
+        text-transform: uppercase;
 
-      a{
-        color:#fff;
-        font-weight: 600;
-        line-height:1.5;
-        text
+        a {
+          color: #fff;
+          font-weight: 600;
+          line-height: 1.5;
+        }
       }
     }
   }

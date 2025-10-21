@@ -630,7 +630,7 @@ main section.view8 button i {
     gap: 1rem;
     grid-area: section;
     border-radius: 10px;
-    background: #444;
+    background-color: #1e1e1e;
     text-transform: uppercase;
   }
   footer section.section .list-content {
@@ -658,14 +658,14 @@ main section.view8 button i {
     background-color: #cebd63;
     text-transform: uppercase;
   }
-  footer .footer {
+  footer section.section .footer {
     grid-area: footer;
     border-radius: 10px;
-    background: #444;
+    background-color: #1e1e1e;
     padding: 3rem;
     text-transform: uppercase;
   }
-  footer .footer a {
+  footer section.section .footer a {
     color: #fff;
     font-weight: 600;
     line-height: 1.5;
