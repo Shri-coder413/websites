@@ -437,6 +437,113 @@ main {
     }
   }
 }
+footer {
+  height: 600px;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 92vw;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas:
+    "aside"
+    "section"
+    "footer";
+
+  .aside {
+    @include flex-column(2rem);
+    grid-area: aside;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    justify-content: space-between;
+
+    .flex-bottom {
+      display: flex;
+      flex-direction: row;
+      @include round-btn();
+
+      .round-glass {
+        @include round-glass();
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  section.section {
+    grid-area: section;
+    @include flex-column();
+    border-radius: 15px;
+    text-transform: uppercase;
+    background-color: #1e1e1e;
+
+    .list-content {
+      @include flex-column(4rem);
+      padding: 2rem;
+
+      h3 {
+        padding-bottom: 1.5rem;
+        font-weight: 200;
+      }
+
+      ul.lists {
+        @include flex-column(1.5rem);
+        list-style: none;
+
+        li {
+          font-family: lq;
+          font-size: 1rem;
+          opacity: 0.5;
+        }
+      }
+      button.more-btn {
+        font-family: lq;
+        font-size: 14px;
+        font-weight: 400;
+        color: #222;
+        outline: none;
+        border: none;
+        margin-top: 1.5rem;
+        padding: 1rem 1.25rem;
+        border-radius: 8px;
+        background-color: #cebd63;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .credits {
+    @include flex-column(1rem);
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    grid-area: footer;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    text-transform: uppercase;
+    padding: 1rem;
+
+    p {
+      font-family: lq;
+      font-size: 1rem;
+      color: #888;
+    }
+    .move-top {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+    small {
+      @include round-glass;
+    }
+
+    a {
+      color: #fff;
+      font-family: lq;
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 1px;
+    }
+  }
+}
 
 @media (min-width: 950px) {
   nav {
@@ -598,81 +705,29 @@ main {
     }
   }
   footer {
-    height: 500px;
-    padding: 1rem;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr 100px;
     grid-template-areas:
       "aside section"
       "aside footer";
 
-    .aside {
-      grid-area: aside;
-      border-radius: 10px;
-      background: #444;
-      @include flex-column(2rem);
-      justify-content: space-between;
-      padding: 2rem;
-
-      .flex-bottom {
-        display: flex;
+    section.section {
+      .list-content {
         flex-direction: row;
-        @include round-btn();
+        gap: 8rem;
 
-        .round-glass {
-          @include round-glass();
-          margin-left: 1rem;
+        h3 {
+          padding-bottom: 2rem;
         }
       }
     }
+    .credits {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 3rem;
 
-    section.section {
-      @include flex-column(1rem);
-      grid-area: section;
-      border-radius: 10px;
-      background-color: #1e1e1e;
-      text-transform: uppercase;
-
-      .list-content {
-        display: flex;
-        gap: 8rem;
-        padding: 4rem;
-        padding-bottom: 1rem;
-
-        ul {
-          list-style: none;
-          line-height: 2em;
-        }
-      }
-      .more-btn {
-        padding: 4rem;
-        button {
-          font-family: lq;
-          font-size: 14px;
-          font-weight: 400;
-          color: #222;
-          outline: none;
-          border: none;
-          padding: 1rem 1.25rem;
-          border-radius: 8px;
-          background-color: #cebd63;
-          text-transform: uppercase;
-        }
-      }
-      .footer {
-        grid-area: footer;
-        border-radius: 10px;
-        background-color: #1e1e1e;
-        padding: 3rem;
-        text-transform: uppercase;
-
-        a {
-          color: #fff;
-          font-weight: 600;
-          line-height: 1.5;
-        }
+      small {
+        @include round-glass;
       }
     }
   }

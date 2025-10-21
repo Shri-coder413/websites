@@ -417,6 +417,151 @@ main section.view8 button i {
   color: #888;
 }
 
+footer {
+  height: 600px;
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 92vw;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: "aside" "section" "footer";
+}
+footer .aside {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  grid-area: aside;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  justify-content: space-between;
+}
+footer .aside .flex-bottom {
+  display: flex;
+  flex-direction: row;
+}
+footer .aside .flex-bottom .round-btn {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  border-radius: 50%;
+  border: 1px solid #555;
+  background-color: #292929;
+}
+footer .aside .flex-bottom .round-btn i {
+  font-size: 1.5rem;
+}
+footer .aside .flex-bottom .round-glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-left: 1rem;
+}
+footer .aside .flex-bottom .round-glass i {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin: 0;
+}
+footer section.section {
+  grid-area: section;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 15px;
+  text-transform: uppercase;
+  background-color: #1e1e1e;
+}
+footer section.section .list-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding: 2rem;
+}
+footer section.section .list-content h3 {
+  padding-bottom: 1.5rem;
+  font-weight: 200;
+}
+footer section.section .list-content ul.lists {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  list-style: none;
+}
+footer section.section .list-content ul.lists li {
+  font-family: lq;
+  font-size: 1rem;
+  opacity: 0.5;
+}
+footer section.section .list-content button.more-btn {
+  font-family: lq;
+  font-size: 14px;
+  font-weight: 400;
+  color: #222;
+  outline: none;
+  border: none;
+  margin-top: 1.5rem;
+  padding: 1rem 1.25rem;
+  border-radius: 8px;
+  background-color: #cebd63;
+  text-transform: uppercase;
+}
+footer .credits {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  grid-area: footer;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+footer .credits p {
+  font-family: lq;
+  font-size: 1rem;
+  color: #888;
+}
+footer .credits .move-top {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+footer .credits small {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -webkit-backdrop-filter: blur(50px);
+          backdrop-filter: blur(50px);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+footer .credits small i {
+  font-size: 1.2rem;
+  font-weight: 100;
+  margin: 0;
+}
+footer .credits a {
+  color: #fff;
+  font-family: lq;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 1px;
+}
+
 @media (min-width: 950px) {
   nav .links .display-block {
     display: block;
@@ -572,40 +717,23 @@ main section.view8 button i {
     padding: 1rem;
   }
   footer {
-    height: 500px;
-    padding: 1rem;
-    display: grid;
-    gap: 1rem;
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 3fr 1fr;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr 100px;
     grid-template-areas: "aside section" "aside footer";
   }
-  footer .aside {
-    grid-area: aside;
-    border-radius: 10px;
-    background: #444;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: space-between;
-    padding: 2rem;
-  }
-  footer .aside .flex-bottom {
-    display: flex;
+  footer section.section .list-content {
     flex-direction: row;
+    gap: 8rem;
   }
-  footer .aside .flex-bottom .round-btn {
-    width: 40px;
-    height: 40px;
-    color: #fff;
-    border-radius: 50%;
-    border: 1px solid #555;
-    background-color: #292929;
+  footer section.section .list-content h3 {
+    padding-bottom: 2rem;
   }
-  footer .aside .flex-bottom .round-btn i {
-    font-size: 1.5rem;
+  footer .credits {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 3rem;
   }
-  footer .aside .flex-bottom .round-glass {
+  footer .credits small {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -617,57 +745,10 @@ main section.view8 button i {
     text-align: center;
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.15);
-    margin-left: 1rem;
   }
-  footer .aside .flex-bottom .round-glass i {
+  footer .credits small i {
     font-size: 1.2rem;
     font-weight: 100;
     margin: 0;
-  }
-  footer section.section {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    grid-area: section;
-    border-radius: 10px;
-    background-color: #1e1e1e;
-    text-transform: uppercase;
-  }
-  footer section.section .list-content {
-    display: flex;
-    gap: 8rem;
-    padding: 4rem;
-    padding-bottom: 1rem;
-  }
-  footer section.section .list-content ul {
-    list-style: none;
-    line-height: 2em;
-  }
-  footer section.section .more-btn {
-    padding: 4rem;
-  }
-  footer section.section .more-btn button {
-    font-family: lq;
-    font-size: 14px;
-    font-weight: 400;
-    color: #222;
-    outline: none;
-    border: none;
-    padding: 1rem 1.25rem;
-    border-radius: 8px;
-    background-color: #cebd63;
-    text-transform: uppercase;
-  }
-  footer section.section .footer {
-    grid-area: footer;
-    border-radius: 10px;
-    background-color: #1e1e1e;
-    padding: 3rem;
-    text-transform: uppercase;
-  }
-  footer section.section .footer a {
-    color: #fff;
-    font-weight: 600;
-    line-height: 1.5;
   }
 }/*# sourceMappingURL=style.css.map */
