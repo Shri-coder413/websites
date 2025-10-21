@@ -23,8 +23,9 @@
 html,
 body {
   width: 100%;
-  height: 2500px;
+  min-height: 100vh;
   background-color: #111;
+  color: #fff;
 }
 
 @mixin flex-column($gap: 0) {
@@ -32,6 +33,46 @@ body {
   flex-direction: column;
   gap: $gap;
 }
+
+@mixin round-btn {
+  .round-btn {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid #555;
+    background-color: #292929;
+
+    i {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@mixin split-view {
+  .top,
+  .bottom {
+    width: 50%;
+  }
+}
+@mixin round-glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  backdrop-filter: blur(50px);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  i {
+    font-size: 1.2rem;
+    font-weight: 100;
+    margin: 0;
+  }
+}
+
 nav {
   color: #fff;
   display: flex;
@@ -39,18 +80,47 @@ nav {
   align-items: center;
   padding: 1rem;
 
-  .btns button {
-    font-family: lq;
-    background-color: #222;
-    color: #fff;
-    padding: 1rem 1rem;
-    border: none;
-    outline: none;
-    border-radius: 10px;
+  .logo-name img {
+    padding-left: 1rem;
   }
-  .btns button:nth-child(2) {
-    background-color: #ad9d49;
-    color: #222;
+  .links {
+    display: flex;
+    gap: 0.5rem;
+
+    .display-block {
+      display: none;
+    }
+
+    h4 {
+      font-family: lq;
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+      outline: none;
+      border: none;
+      padding: 1rem 1.25rem;
+      border-radius: 8px;
+      background-color: #1e1e1e;
+      text-transform: uppercase;
+    }
+    h4:nth-child(7) {
+      background-color: #cebd63;
+      color: #222;
+    }
+    h4:nth-child(6) .zero {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      color: #222;
+      padding-top: 2px;
+      border-radius: 10px;
+      background-color: #cebd63;
+      font-family: lq;
+      text-align: center;
+    }
+    h4:last-child {
+      display: none;
+    }
   }
 }
 
@@ -64,6 +134,7 @@ main {
     @include flex-column(0.7rem);
 
     .top {
+      height: fit-content;
       img {
         width: 100%;
         border-radius: 10px;
@@ -73,10 +144,10 @@ main {
     .bottom {
       @include flex-column(5rem);
       justify-content: space-between;
-      width: 100%;
       padding: 2rem;
       border-radius: 10px;
       background-color: #1e1e1e;
+      flex-wrap: no-wrap;
 
       .top-text {
         font-family: lq;
@@ -85,6 +156,10 @@ main {
 
       .text {
         @include flex-column(0.5rem);
+
+        div {
+          @include round-btn();
+        }
 
         h1 {
           width: 85%;
@@ -102,34 +177,17 @@ main {
         }
 
         div {
-          padding-top: 1rem;
-        }
-        #downBtn {
-          width: 40px;
-          outline: none;
-          color: #fff;
-          opacity: 0.5;
-          padding: 7px 0;
-          border-radius: 50%;
-          border: 1px solid #555;
-          background-color: #292929;
-          margin-top: 1rem;
-
-          i {
-            font-size: 1.5rem;
-          }
+          padding-top: 0.5rem;
         }
       }
     }
   }
   section.view2 {
-    // width:100%;
     display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
     padding: 1rem;
     text-align: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
 
     small {
       font-family: lq;
@@ -155,7 +213,6 @@ main {
       @include flex-column(5rem);
       justify-content: space-between;
       background-color: #1e1e1e;
-      width: 100%;
       padding: 2rem;
       border-radius: 10px;
 
@@ -183,24 +240,6 @@ main {
             opacity: 0.5;
           }
         }
-        div {
-          padding-top: 1rem;
-        }
-        #downBtn {
-          width: 40px;
-          outline: none;
-          color: #fff;
-          opacity: 0.5;
-          padding: 7px 0;
-          border-radius: 50%;
-          border: 1px solid #555;
-          background-color: #292929;
-          margin-top: 1rem;
-
-          i {
-            font-size: 1.5rem;
-          }
-        }
       }
     }
   }
@@ -218,7 +257,6 @@ main {
     .bottom {
       @include flex-column(5rem);
       justify-content: space-between;
-      width: 100%;
       padding: 2rem;
       border-radius: 10px;
       background-color: #1e1e1e;
@@ -240,51 +278,177 @@ main {
         }
         .mid-text {
           font-family: chalu;
-          font-size: 1.3rem;
           font-weight: 300;
           line-height: 1.5;
           opacity: 0.5;
         }
+      }
+    }
+  }
+  section.view5 {
+    @include flex-column(1rem);
+    padding: 2rem;
 
-        div {
-          padding-top: 1rem;
-        }
-        #downBtn {
-          width: 40px;
-          outline: none;
-          color: #fff;
-          opacity: 0.5;
-          padding: 7px 0;
-          border-radius: 50%;
-          border: 1px solid #555;
-          background-color: #292929;
-          margin-top: 1rem;
+    h3 {
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
 
-          i {
-            font-size: 1.5rem;
-          }
+    .hide {
+      display: none;
+    }
+  }
+  section.view6 {
+    @include flex-column(1rem);
+    padding: 1rem;
+    .cards {
+      @include flex-column();
+      justify-content: space-between;
+      height: 385px;
+      width: 385px;
+      padding: 1rem;
+      background-size: cover;
+      border-radius: 8px;
+
+      .flex-top {
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+        margin: 1.5rem;
+      }
+
+      .flex-bottom {
+        height: 70px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 10px;
+        background: transparent;
+        backdrop-filter: blur(15px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+
+        h3 {
+          font-weight: 200;
+          letter-spacing: 1px;
         }
+        p {
+          font-family: lq;
+          font-size: 0.8rem;
+          letter-spacing: 1px;
+        }
+      }
+    }
+    .card1 {
+      background-image: url("./images/card1.webp");
+    }
+    .card2 {
+      background-image: url("./images/card2.webp");
+    }
+    .card3 {
+      background-image: url("./images/card3.webp");
+    }
+
+    .round-glass {
+      @include round-glass;
+    }
+    .round-glass:hover {
+      border: 1px solid #fff;
+      cursor: pointer;
+    }
+  }
+  section.view7 {
+    padding: 1rem;
+    @include flex-column(0.7rem);
+
+    .top img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .bottom {
+      @include flex-column(1rem);
+      justify-content: space-between;
+      padding: 2rem;
+      border-radius: 10px;
+      background-color: #1e1e1e;
+
+      .header {
+        @include flex-column(2rem);
+        h3 {
+          font-size: 3rem;
+          font-weight: 500;
+          line-height: 1;
+          text-transform: uppercase;
+        }
+        p {
+          font-family: lq;
+          font-size: 0.95rem;
+          color: #888;
+        }
+      }
+
+      div.hide {
+        @include round-btn;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-right: 2rem;
+      }
+    }
+  }
+  section.view8 {
+    @include flex-column(1rem);
+    text-transform: uppercase;
+    background-color: #cebd63;
+    color: #000;
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 10px;
+
+    p {
+      font-family: lq;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 2.6rem;
+      font-weight: 200;
+      line-height: 1;
+    }
+
+    button {
+      width: 100%;
+      font-family: lq;
+      font-size: 14px;
+      font-weight: 400;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 0.5rem 1rem;
+      background-color: #000;
+
+      i {
+        margin-left: 0.5rem;
+        font-size: 1.5rem;
+        color: #888;
       }
     }
   }
 }
 
-@media (min-width: 900px) {
- nav{
-  .logo-name{
-        p{
-      font-size: 2rem;
+@media (min-width: 950px) {
+  nav {
+    .links .display-block {
+      display: block;
     }
   }
-}
   main {
     section.view1 {
       flex-direction: row;
+      @include split-view;
 
-      .top,
-      .bottom {
-        width: 50%;
-      }
       .bottom {
         padding: 3.5rem;
         .text {
@@ -310,11 +474,7 @@ main {
     }
     section.view3 {
       flex-direction: row-reverse;
-
-      .top,
-      .bottom {
-        width: 50%;
-      }
+      @include split-view();
 
       .bottom {
         padding: 4rem;
@@ -340,16 +500,12 @@ main {
     }
     section.view4 {
       flex-direction: row;
-      .top,
-      .bottom {
-        width: 50%;
-      }
+      @include split-view();
 
       .bottom {
         padding: 4rem;
         .text {
           h1 {
-            width: 100%;
             font-size: 3rem;
           }
           .para {
@@ -365,6 +521,160 @@ main {
             }
           }
         }
+      }
+    }
+
+    section.view5 {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      h3 {
+        font-size: 3rem;
+        font-weight: 200;
+        margin-left: 2rem;
+      }
+      div.hide {
+        @include round-btn;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-right: 2rem;
+      }
+    }
+    section.view6 {
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+      gap: 1rem;
+
+      .cards {
+        width: 32%;
+        padding: 1rem;
+        background-size: cover;
+        border-radius: 8px;
+      }
+    }
+    section.view7 {
+      flex-direction: row;
+      @include split-view;
+
+      .bottom {
+        padding: 3rem;
+        .text {
+          h1 {
+            width: 100%;
+            font-size: 4rem;
+          }
+          .mid-text {
+            width: 90%;
+          }
+        }
+      }
+    }
+
+    section.view8 {
+      flex-direction: row;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: 4rem;
+
+      .left {
+        width: 70%;
+
+        p {
+          font-size: 1rem;
+        }
+        h3 {
+          font-size: 5rem;
+        }
+
+        .right {
+          width: 30%;
+          button {
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+  footer {
+    height: 500px;
+    padding: 1rem;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 3fr 1fr;
+    grid-template-areas:
+      "aside section"
+      "aside footer";
+
+    .aside {
+      grid-area: aside;
+      border-radius: 10px;
+      background: #444;
+      @include flex-column(2rem);
+      justify-content: space-between;
+      padding: 2rem;
+
+      .flex-bottom {
+        display: flex;
+        flex-direction: row;
+        @include round-btn();
+
+        .round-glass {
+          @include round-glass();
+          margin-left: 1rem;
+        }
+      }
+    }
+
+    section.section {
+      @include flex-column(1rem);
+      grid-area: section;
+      border-radius: 10px;
+      background-color:#1e1e1e;
+      text-transform: uppercase;
+
+      .list-content {
+        display: flex;
+        gap: 8rem;
+        padding: 4rem;
+        padding-bottom: 1rem;
+
+        ul {
+          list-style: none;
+          line-height: 2em;
+        }
+      }
+      .more-btn {
+        padding: 4rem;
+        button {
+          font-family: lq;
+          font-size: 14px;
+          font-weight: 400;
+          color: #222;
+          outline: none;
+          border: none;
+          padding: 1rem 1.25rem;
+          border-radius: 8px;
+          background-color: #cebd63;
+          text-transform: uppercase;
+        }
+      }
+    }
+    .footer {
+      grid-area: footer;
+      border-radius: 10px;
+      background-color: #1e1e1e;
+      padding: 3rem;
+      text-transform: uppercase;
+
+      a{
+        color:#fff;
+        font-weight: 600;
+        line-height:1.5;
+        text
       }
     }
   }
