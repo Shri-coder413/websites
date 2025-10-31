@@ -1,0 +1,458 @@
+@font-face {
+  font-family: gogo;
+  src: url("./google sans.woff2");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "gogo", "sans-serif", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS";
+}
+
+body,
+html {
+  width: 100%;
+  min-height: 100vh;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: transform 0.4s ease;
+  margin-bottom: 1rem;
+}
+nav .top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  padding: 1rem 2rem;
+  background: linear-gradient(124.64deg, #027dfd, #833ef2);
+}
+nav .top p {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+nav nav.hide {
+  transform: translateY(-100%);
+}
+nav .bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  background-color: transparent;
+  padding: 1.2rem 2rem;
+}
+nav .bottom img {
+  width: 7.8rem;
+}
+nav .bottom .list-items {
+  display: none;
+}
+
+main {
+  color: #fff;
+}
+main section#hero-section {
+  padding: 5rem 0;
+  background-color: #1a68d3;
+  background-image: radial-gradient(ellipse at bottom, #1a68d3 5%, transparent 60%), linear-gradient(136deg, transparent, #71c7ee 290%), linear-gradient(115deg, #9d9af1, transparent 40%), linear-gradient(180deg, transparent 0, #1a68d3 70%), radial-gradient(ellipse at -70% -180%, transparent 80%, #71c7ee 0), radial-gradient(ellipse at bottom, #1a68d3 40%, transparent 80%), radial-gradient(ellipse at 5% 340%, transparent 80%, #bfc2f4 0);
+  background-size: cover;
+  background-position: center;
+}
+main section#hero-section div .heading {
+  height: 40vh;
+  padding: 0 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  gap: 0;
+}
+main section#hero-section div .heading h1 {
+  font-size: 2.8rem;
+  margin-bottom: 80px;
+}
+main section#hero-section div .gallery {
+  min-height: 800px;
+  display: grid;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  grid-template-columns: 1fr 250px 1fr;
+  grid-template-areas: "left center right";
+  margin-bottom: 4rem;
+}
+main section#hero-section div .gallery img {
+  position: absolute;
+  border-radius: 10px;
+}
+main section#hero-section div .gallery #left {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  position: relative;
+  grid-area: left;
+}
+main section#hero-section div .gallery #left .img1 {
+  width: 520px;
+  top: 12%;
+  right: 0;
+}
+main section#hero-section div .gallery #left .img2 {
+  width: 200px;
+  right: 220px;
+  bottom: 0;
+}
+main section#hero-section div .gallery #left .img3 {
+  width: 200px;
+  right: 0;
+  bottom: 116px;
+}
+main section#hero-section div .gallery #center {
+  min-width: 0;
+  max-width: 250px;
+  position: relative;
+  padding: 0 2rem;
+  grid-area: center;
+  display: flex;
+  justify-content: center;
+}
+main section#hero-section div .gallery #center .center-img {
+  width: 100%;
+}
+main section#hero-section div .gallery #right {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  height: 840px;
+  position: relative;
+  overflow-x: hidden;
+  grid-area: right;
+}
+main section#hero-section div .gallery #right .img1 {
+  width: 200px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0;
+  top: 14%;
+}
+main section#hero-section div .gallery #right .img2 {
+  width: 200px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 0;
+  top: 52%;
+}
+main section#hero-section div .gallery #right .img3 {
+  width: 200px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  left: 220px;
+  bottom: 0;
+}
+main section#hero-section div .gallery #right .img4 {
+  width: 500px;
+  top: 200px;
+  left: 210px;
+  margin-left: 1rem;
+}
+main section#hero-section div div.content {
+  text-align: center;
+}
+main section#hero-section div div.content h2 {
+  width: 91%;
+  margin: auto;
+  font-weight: 500;
+  font-size: 2.2rem;
+  padding-bottom: 2rem;
+}
+main section#hero-section div div.content button {
+  padding: 0.7rem 2rem;
+  background-color: #fff;
+  color: #1a68d3;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 25px 25px;
+}
+main section#view1 {
+  color: black;
+  padding: 4rem 0;
+}
+main section#view1 .top {
+  text-align: center;
+}
+main section#view1 .top h2 {
+  width: 91%;
+  margin: auto;
+  font-weight: 500;
+  font-size: 2.2rem;
+  padding-bottom: 2rem;
+}
+main section#view1 .down {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  padding: 1rem;
+}
+main section#view1 .down .buttons {
+  padding: 0.85rem 1.5rem;
+  text-align: center;
+  border-radius: 25px 25px;
+  color: #027dfd;
+  font-weight: 600;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+main section#view1 .down .buttons:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+main section#view1 .down .buttons.active {
+  color: #fff;
+  background-color: #027dfd;
+}
+main section#view2 {
+  padding: 0 2rem;
+}
+main section#view2 .media {
+  margin-bottom: 1rem;
+}
+main section#view2 .media video {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main section#view2 .features {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+main section#view2 .features h3 {
+  color: #13b7a3;
+  font-size: 2rem;
+}
+main section#view2 .features p {
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+main section#view2 .features button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.7rem 2rem;
+  background-color: #fff;
+  color: #1a68d3;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 25px 25px;
+  border: 1px solid #027dfd;
+}
+main section.view {
+  padding: 0 2rem;
+  color: #000;
+}
+main section.view .media {
+  margin-bottom: 1rem;
+}
+main section.view .media video {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+main section.view .features {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+main section.view .features h3 {
+  color: #13b7a3;
+  font-size: 1rem;
+}
+main section.view .features h2 {
+  font-size: 2.5rem;
+}
+main section.view .features p {
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+main section.view .features button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.7rem 2rem;
+  background-color: #fff;
+  color: #1a68d3;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 25px 25px;
+  border: 1px solid #027dfd;
+}
+
+@media (min-width: 1536px) {
+  nav .bottom i {
+    display: none;
+  }
+  nav .bottom .list-items {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    list-style: none;
+  }
+  nav .bottom .list-items a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  nav .bottom .list-items .get-started-btn {
+    padding: 0.7rem 2rem;
+    background-color: #fff;
+    color: #1a68d3;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    border-radius: 25px 25px;
+  }
+  nav .bottom .list-items .get-started-btn a {
+    color: #027dfd;
+  }
+}
+@media (min-width: 1024px) {
+  main section#hero-section div div.content {
+    text-align: center;
+  }
+  main section#hero-section div div.content h2 {
+    width: 56%;
+  }
+  main section#hero-section div .gallery {
+    grid-template-columns: 1fr 368px 1fr;
+    grid-template-areas: "left center right";
+  }
+  main section#hero-section div .gallery #center {
+    max-width: 368px;
+  }
+  main section#hero-section div .gallery #center .center-img {
+    max-width: 368px;
+  }
+  main section#view1 {
+    padding-top: 5rem;
+  }
+  main section#view1 .top h2 {
+    width: 56%;
+  }
+  main section#view1 .down .buttons {
+    padding: 0.8rem 4rem;
+  }
+  main section#view2 {
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  main section#view2 .media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 0;
+    background-color: #fff;
+  }
+  main section#view2 .media video {
+    width: 125%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+  }
+  main section#view2 .features {
+    width: 50%;
+  }
+  main section.view {
+    width: 80vw;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+  }
+  main section.view .media {
+    width: 50%;
+  }
+  main section.view .media img {
+    width: 80%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: auto;
+    margin-left: 8rem;
+  }
+  main section.view .features {
+    width: 45%;
+    margin-left: 2.4rem;
+  }
+  main section.view .features h2 {
+    font-size: 3.5rem;
+  }
+  main section.view .features p {
+    font-size: 1.2rem;
+  }
+  main section.view .features h3 {
+    font-size: 1.2rem;
+  }
+  main section#column1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+  main section#column2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 0;
+  }
+  main section#column2 .media img {
+    margin-left: 0;
+  }
+  main section#column3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 0;
+  }
+  main section#column4 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    gap: 0;
+  }
+  main section#column4 .media img {
+    margin-left: 0;
+  }
+}/*# sourceMappingURL=style.css.map */
